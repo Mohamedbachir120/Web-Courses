@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>JavaScript Courses</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Merriweather:ital@0;1&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading">BBC School</div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action bg-light" href="#!"><h5>3. JavaScript</h5></a>
+                    
+                    <a class="list-group-item list-group-item-action bg-light" href="#logique">3.0 Introduction à la logique de Boole ? </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#hello">3.1 Hello world </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#variable">3.2 Un monde de Variables</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#operations">3.3 Les opérations de base </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#conditions">3.4 Les conditions </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#boucles">3.5 Les boucles </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#tableaux">3.5 Les tableaux </a>
+
+
+                  
+
+                </div>
+            </div>
+            <!-- Page Content-->
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">
+                                    HTML
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active"><a class="nav-link" href="css.html">CSS</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="js.html">JavaScript</a></li>
+                        
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid pb-5">
+                    <h2 class="my-3">JavaScript</h2>
+                    <div class="d-flex flex-row align-items-end p-4">
+                        <img src="js.png" height="100px" width="100px" alt="">
+                        <p>
+                            &nbsp; &nbsp; Il s’agit d’un langage de programmation de scripts basé sur les objets. Il sert à créer des pages Web interactives en manipulant le contenu des pages HTML. Il a été créé par Brendan Eich en 1995. <br> Grâce à la création du Node js en 2009 JavaScript peut être utilisé   même en backend.
+    
+                        </p>
+    
+                    </div>
+                    <h3 class="my-2" id="logique">3.0 Introduction à la logique de Boole ?</h3>
+
+                    <p>
+                        dans le but de simplifier l'information aux maximum la notion de la logique de Boole
+                        a été introduit en 1854 par le  mathématicien britannique George Boole.  utilisé dans la premiére  fois dans les  circuits de commutation téléphonique . 
+                        <br>
+                        Toute expression en logique ne peut avoir que l'une de ces valeurs { Vrai , faux }
+                        il existe plusieurs opérateurs pour l'évaluaion des expressions complexes parmi ces opérateurs 
+                        on trouve ( && = et = * , || = ou = +  )
+
+                        
+                        <div class="d-flex flex-row">
+                            <table class="table table-dark table-striped mx-1">
+                                <thead>
+                                  <tr class="bg-success">
+                                    <th scope="col" colspan="3" class="text-center"> Table de la loi  ET  </th>
+                                 
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>a</td>
+                                    <td>b</td>
+                                    <td>a ET b</td>
+                                  </tr>
+                                  <tr>
+                                    <td >1</th>
+                                    <td>1</td>
+                                    <td>1</td>
+                                  </tr>
+                                  <tr>
+                                    <td >1</th>
+                                    <td>0</td>
+                                    <td>0</td>
+                                  </tr>
+                                  <tr>
+                                    <td >0</th>
+                                    <td>1</td>
+                                    <td>0</td>
+                                  </tr> <tr>
+                                    <td >0</th>
+                                    <td>0</td>
+                                    <td>0</td>
+                                  </tr>
+                                </tbody>
+                              </table>  
+
+                              <table class="table table-dark table-striped mx-1">
+                                <thead>
+                                  <tr class="bg-primary">
+                                    <th scope="col" colspan="3" class="text-center"> Table de la loi  OU  </th>
+                                 
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>a</td>
+                                    <td>b</td>
+                                    <td>a OU b</td>
+                                  </tr>
+                                  <tr>
+                                    <td >1</th>
+                                    <td>1</td>
+                                    <td>1</td>
+                                  </tr>
+                                  <tr>
+                                    <td >1</th>
+                                    <td>0</td>
+                                    <td>1</td>
+                                  </tr>
+                                  <tr>
+                                    <td >0</th>
+                                    <td>1</td>
+                                    <td>1</td>
+                                  </tr> <tr>
+                                    <td >0</th>
+                                    <td>0</td>
+                                    <td>0</td>
+                                  </tr>
+                                </tbody>
+                              </table> 
+
+
+
+
+                              
+                        </div>
+
+                    </p>
+
+                    <h3 class="my-2" id="hello">3.1 Hello World</h3>
+
+                    Hello World , en français Bonjour  le monde l'expression la plus utilisée dans le monde de programmation
+                    paour tester un affichage à l'écran, cette expression peut être utilisé en JavaScript via l'appel de la 
+                    fonction  alert("le message a afficher"); <br> 
+                    <h5>vous avez envie de  tester eh bien cliquez ici  !                     <button class="btn btn-primary mx-1 p-2 executer" onclick="alert('hello world !');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                    </h5> 
+
+                    <h3 class="my-2" id="variable">3.2 Un  Monde de Variable</h3>
+                    <p>
+                      imaginer que  vous êtes un cuisinier et vous voulez préparer un plat pour votre restaurant, alors sûrement vous aurez besoin d'ingrédients,
+                      dans le cas de préparation d'un code les variables font le job ! 
+                      <h4>Qu'est-ce qu'une variable ? </h4>
+                        une est variable est tout simplement un espace mémoire réservé dans votre RAM par le code que vous avez executé ,<br>
+                        les variables sont identifiés par leur types qui peut être  (un nombre entier , un nombre décimale , un caractére , boolean ,une chaine de caractéres ...)
+
+                      
+                        <div class="d-flex flex-column">
+                          <div class="d-flex flex-row my-2  ">
+                              <button class="btn btn-success mx-1 p-2" onclick="copy('secondarea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                              <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('secondarea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                          </div>
+                          
+                      <div class="d-flex flex-row ">
+                      <div class="col-lg-12">
+                      
+                          <textarea class="secondarea" name="" id=""     cols="60" rows="10" readonly>
+                      &lt;html> 
+                      
+                      &lt;head> 
+                      
+                          &lt;meta charset="UTF-8"> 
+                      
+                          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                      
+                          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                      
+                      
+                      
+                      &lt;/head> 
+                      
+                      &lt;body> 
+                      
+                      
+                      
+                      &lt;/body> 
+                      &lt;script>
+                      var a ="ceci est une chaine de caractére";
+                      var c = true;
+                      var nombre=120;
+                      var decim=12.3;
+
+                      alert(a);
+                      alert(nombre);
+                      alert(decim);
+
+                      &lt;/script>
+                      
+                      &lt;/html> 
+                      
+                      </textarea>
+                      
+                      </div>    
+                      
+                      </div>     
+                      
+                      
+                      </div>
+
+                    </p>
+
+                    <h3 class="my-2" id="operations">3.3 Les opérations de bases </h3>
+
+                    <p>
+                      <h5> L'affectation :</h5>
+                      <p>
+                        l'affectation est l'opération la plus importante dans un langage de programmation elle sert à donner des valeurs 
+                        a nos variable pour cela on utilise l'opérateur ' = '.
+
+
+                      </p>
+                      <h5>Les opérations de calcul : </h5>
+                      <p>
+                        Comme tout autre langage de programmation JavaScript propose les différentes opérations de calcul comme 
+                     
+                        (l'addition(+), la soustraction (-) , la multiplication * , la division /)
+                     
+                      </p>
+                    </p>
+
+
+                    <h3 class="my-2" id="conditions">3.4 Les conditions </h3>
+                   
+                    <p>
+                      Les conditions sert à faire des tests sur nos variable par exemple de savoir si une variable est égale à 0 ou 
+                      bien supérieur ... <br>
+
+                      les conditions sont utilisés via le groupe d'instruction if else ;
+                      
+                      <div class="d-flex flex-column">
+                        <div class="d-flex flex-row my-2  ">
+                            <button class="btn btn-success mx-1 p-2" onclick="copy('thirdarea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                            <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('thirdarea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                        </div>
+                        
+                    <div class="d-flex flex-row ">
+                    <div class="col-lg-12">
+                    
+                        <textarea class="thirdarea" name="" id=""     cols="60" rows="10" readonly>
+                    &lt;html> 
+                    
+                    &lt;head> 
+                    
+                        &lt;meta charset="UTF-8"> 
+                    
+                        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                    
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                    
+                    
+                    
+                    &lt;/head> 
+                    
+                    &lt;body> 
+                    
+                    
+                    
+                    &lt;/body> 
+                    &lt;script>
+                    var age = 8;
+                    if(age &lt; 8){
+                      alert("vous êtes trop jeune ");
+                    }else{
+
+                      alert("vous êtes assez  grand ");
+
+                    }
+
+                    &lt;/script>
+                    
+                    &lt;/html> 
+                    
+                    </textarea>
+                    
+                    </div>    
+                    
+                    </div>     
+                    
+                    
+                    </div>
+
+
+                    </p>
+                    
+                    <h3 class="my-2" id="boucles">3.5 Les boucles </h3>
+                   
+                    <p>
+                      Les boucles sert à répéter un groupe d'instruction plusieurs fois , en JS il existe trois maniére de les implémenter  <br>
+
+                   <strong>   while { ... groupes d'instructions } </strong>  <br> <strong> for(conditions){ ... groupes d'instructions } </strong> <br> <strong> do{ } while(); </strong> 
+                      
+                      <div class="d-flex flex-column">
+                        <div class="d-flex flex-row my-2  ">
+                            <button class="btn btn-success mx-1 p-2" onclick="copy('forth');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                            <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('forth');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                        </div>
+                        
+                    <div class="d-flex flex-row ">
+                    <div class="col-lg-12">
+                    
+                        <textarea class="forth" name="" id=""     cols="60" rows="10" readonly>
+                    &lt;html> 
+                    
+                    &lt;head> 
+                    
+                        &lt;meta charset="UTF-8"> 
+                    
+                        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                    
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                    
+                    
+                    
+                    &lt;/head> 
+                    
+                    &lt;body> 
+                    
+                    
+                    
+                    &lt;/body> 
+                    &lt;script>
+                          document.write("<h1> Example 01 </h1>");
+                          for(i=0;i &lt; 10 ; i++){
+                            document.write("je ne dois pas parler à mes camarades <br>");
+                            
+                          }
+
+                          document.write("<h1> Example 02 </h1>");
+                          document.write("ceci est la table de multiplication du chiffre 6 <br>");
+                          j=1;
+                          do{
+                            document.write(" 6 x "+j+" ="+ 6 * j+"<br>");
+                            j++;
+
+                          }while(j &lt;  10);
+
+                    &lt;/script>
+                    
+                    &lt;/html> 
+                    
+                    </textarea>
+                    
+                    </div>    
+                    
+                    </div>     
+                    
+                    
+                    </div>
+
+
+                    </p>
+
+                    <h3 class="my-2" id="tableaux">3.6 Les tableaux </h3>
+                   
+                    <p>
+                          Un tableau est une structure de donnée qui permet de stocker plusieurs éléments.
+                      <div class="d-flex flex-column">
+                        <div class="d-flex flex-row my-2  ">
+                            <button class="btn btn-success mx-1 p-2" onclick="copy('fifth');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                            <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('fifth');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                        </div>
+                        
+                    <div class="d-flex flex-row ">
+                    <div class="col-lg-12">
+                    
+                        <textarea class="fifth" name="" id=""     cols="60" rows="10" readonly>
+                    &lt;html> 
+                    
+                    &lt;head> 
+                    
+                        &lt;meta charset="UTF-8"> 
+                    
+                        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                    
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                    
+                    
+                    
+                    &lt;/head> 
+                    
+                    &lt;body> 
+                    
+                    
+                    
+                    &lt;/body> 
+                    &lt;script>
+                          let students = ["youcef","hala","manil","imad","aymen","racim","yacine","abdelghani"];
+                          document.write(students);
+
+                    &lt;/script>
+                    
+                    &lt;/html> 
+                    
+                    </textarea>
+                    
+                    </div>    
+                    
+                    </div>     
+                    
+                    
+                    </div>
+                    <h3>Les méthodes de gestion des tableaux : </h3>
+                    <table class="table  table-striped mx-1">
+                        <tbody>
+                        <tr>
+                          <td>méthode</td>
+                          <td>Rôle</td>
+                          
+                        </tr>
+                        <tr>
+                          <td >Length</th>
+                          <td>retourne le nombre d'éléments d'un tableau</td>
+                        </tr>
+                        <tr>
+                          <td >sort()</th>
+                          <td>permet de trier un tableau</td>
+                        </tr>
+                        <tr>
+                          <td >reverse()</th>
+                          <td>permet d'inverser l'ordre du tableau</td>
+                        </tr> <tr>
+                          <td >push</th>
+                          <td>permet d'ajouter un élément</td>
+                        </tr>
+                        <tr>
+                          <td >pop</th>
+                          <td>permet de supprimer un éléments/td>
+                        </tr>
+                      </tbody>
+                    </table> 
+
+
+                    </p>
+                    
+
+               
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+    <style>
+        *{
+               font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <script>
+       
+        function copy(val){
+            const el = document.getElementsByClassName(val)[0];
+            console.log(el);
+            el.select();
+            document.execCommand('copy');
+
+        }
+        function execute(val){
+            var l=document.getElementsByClassName(val)[0].value;
+          
+            var opened = window.open("Example","Example");
+            opened.document.write(l);
+            opened.document.title="Example";
+        }
+            
+            
+
+       
+    </script>
+</html>

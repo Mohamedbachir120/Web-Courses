@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>HTML5 Courses</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Merriweather:ital@0;1&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading">BBC School</div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action bg-light" href="#!"><h5>1. HTML5</h5></a>
+                    
+                    <a class="list-group-item list-group-item-action bg-light" href="#paragraphes">1.1 Les paragraphes </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#titres">1.2 Les titres</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#listes">1.3 Les listes</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#liens">1.4 Les liens</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#conteneurs">1.5  Les conteneurs génériques</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#images">1.6 Les images </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#tables">1.7 Les tableaux </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#videos">1.8 Son & Vidéos </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#forms">1.9 Les formulaires </a>
+                    
+
+                </div>
+            </div>
+            <!-- Page Content-->
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#!">
+                                    HTML
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active"><a class="nav-link" href="css.html">CSS</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="js.html">JavaScript</a></li>
+                        
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid pb-5">
+                    <h2 class="my-3">HTML5</h2>
+                    <div class="d-flex flex-row align-items-end p-4">
+                        <img src="html5.svg" height="100px" width="100px" alt="">
+                        <p>
+                            Le HyperText Markup Language, se trduit en français en langage de balisage d'hypertexte (hypertexte = lien).
+                             Conçu pour l’écriture des pages web. 
+    
+                        </p>
+    
+                    </div>
+                    <h3 class="my-2"> De  quoi se compose-t-il ?</h3>
+
+                    Tout document HTML5 commence par :
+                    <br>
+                 &nbsp; &nbsp; &nbsp;  &lt;!DOCTYPE html &gt;  <br>
+
+                 Pour dire qu'il s'ag s’agit de la version 5 du langage html. 
+                    <br>
+                 Le document html est composé de plusieurs balise imbriqués. 
+                 <br>
+                 <br>
+                  <h3 id="paragraphes">1.1 les paragraphes :</h3>
+                  <p>
+                    pour écrire l'écriture du texte on utilise généralement la balise  &lt;p&gt; ... &lt;/p&gt;               
+                  </p>  
+                 <h4>Example : </h4>
+                 
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('firstarea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('firstarea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="firstarea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+        &lt;p> Bonjour tout le monde &lt;/p> 
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+                 <br>
+                 <br>
+<div class="mt-3">
+<h3 id="titres">1.2 Les titres </h3>
+La création des titres en HTML5 se fait à travers les balises &lt;h1&gt; ...  &lt;h6&gt;
+<br>
+<br>
+<h4>Example :</h4>
+<br><br>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('secondarea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('secondarea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="secondarea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+        &lt;h1> Titre  H1 &lt;/h1>
+        &lt;h2> Titre  H2 &lt;/h2> 
+        &lt;h3> Titre  H3 &lt;/h3> 
+        &lt;h4> Titre  H4 &lt;/h4> 
+        &lt;h5> Titre  H5 &lt;/h5> 
+        &lt;h6> Titre  H6 &lt;/h6> 
+
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+
+</div>
+<div class="mt-3">
+    <h3 id="listes"> 1.3 Les listes</h3>
+    <p>
+
+    la création des listes permet de regrouper un ensemble de données ,se fait à travers la balise &lt;ul&gt; 
+    pour les listes non-ordonnées et &lt;ol&gt;  pour les listes ordonnées. <br>
+
+    la création des éléments d'une liste se fait à travers la balise   &lt;li&gt;
+
+
+    </p>
+   <br>
+   <h4>Example :</h4>
+   <br><br>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('thirdarea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('thirdarea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="thirdarea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+&lt;p> Example de liste non-ordonnée : &lt/p>
+        &lt;ul> 
+       &lt;li> Premier élément de la liste &lt;/li>
+       &lt;li> deuxième élément de la liste &lt;/li>
+       &lt;li> Troisième élément de la liste &lt;/li>
+       &lt;/ul>
+
+    &lt;p> Example de liste ordonnée : &lt/p>
+    &lt;ol> 
+    &lt;li> Premier élément de la liste &lt;/li>
+    &lt;li> deuxième élément de la liste &lt;/li>
+    &lt;li> Troisième élément de la liste &lt;/li>
+    &lt;/ol>
+
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+
+
+</div>
+<div class="mt-3">
+    <h3 id="liens"> 1.4  Les liens</h3>
+    <p>
+        La force du HTML réside dans sa capacité à créer des pages liés entre elle avec se qu'on appelle HYPERTEXT(Liens),
+        la création des liens se fait à travers la balise &lt;a&gt; en mentionant le chemin via l'attribut <strong>href="le chemin"</strong>. 
+        
+        
+
+    </p>
+   <br>
+   <h4>Example :</h4>
+   <br><br>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('fortharea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('fortharea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="fortharea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+&lt;a href="https://www.youtube.com/">Lien vers youtube  &lt/a>
+     
+
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+
+
+</div>
+<div class="mt-3">
+    <h3 id="conteneurs"> 1.5  Les conteneurs génériques</h3>
+    <p>
+      
+        Pour la création des conteneurs HTML5 propose plusieurs balise chacune posséde sa propre valeur sémantique ,
+        parmi ces balises on trouve(&lt;div&gt;,&lt;main&gt;,&lt;span&gt;,&lt;nav&gt;,&lt;section&gt; ... ) 
+        
+
+    </p>
+   <br>
+   <h4>Example :</h4>
+   <br><br>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('fiftharea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('fiftharea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="fiftharea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+&lt;div style="background-color:red;min-height:200px;">ceci est un élément générique  &lt/div>
+     
+
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+
+
+</div>
+
+<div class="mt-3">
+    <h3 id="images"> 1.6  Les images </h3>
+    <p>
+      
+        la balise qui permet de créer des images en html c'est la fameuse balise &lt;img&gt; en spécifiant l'attribut
+
+        <strong>src="le chemin vers l'image"</strong> .
+
+
+        
+
+    </p>
+   <br>
+   <h4>Example :</h4>
+   <br><br>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('sixtharea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('sixtharea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="sixtharea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+&lt;img src="image.jpeg" title="coucher de soleil" alt="coucher de soleil">
+     
+
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+
+
+</div>
+
+<div class="mt-3">
+    <h3 id="tables"> 1.7  Les tableaux </h3>
+    <p>
+      
+        Pour une meilleure organisation l'html propose une balise que l'on appelle &lt;table&gt; qui permet de représenter les données sous forme d'un tableau.
+        <ul>
+            <li>&lt;thead&gt; ... &lt;/thead&gt; : représente l’en-tête du tableau.</li>
+            <li>&lt;tr&gt; ... &lt;/tr&gt; : représente une ligne du tableau .</li>
+            <li>&lt;tbody&gt; ... &lt;/tbody&gt; :permet de regrouper une ou plusieurs lignes à fin de construire le corp du tableau .</li>
+            <li>&lt;td&gt; ... &lt;/td&gt; :  représente une cellule du tableau .</li>
+        </ul>
+        
+
+    </p>
+   <br>
+   <h4>Example :</h4>
+   <br><br>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('seventharea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('seventharea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="seventharea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+&lt;table> 
+
+    &lt;thead> 
+    
+    &lt;tr> 
+    
+    &lt;td>le nom&lt;/td> 
+    
+    &lt;td>la note&lt;/td> 
+    
+    &lt;/tr> 
+    
+    &lt;/thead> 
+    
+    &lt;tbody> 
+    
+    &lt;tr> 
+    
+    &lt;td>Ahmed&lt;/td> 
+    
+    &lt;td>15&lt;/td> 
+    
+    &lt;/tr> 
+    
+    &lt;tr> 
+    
+    &lt;td>Ramy&lt;/td> 
+    
+    &lt;td>18&lt;/td> 
+    
+    &lt;/tr> 
+    
+    &lt;tr> 
+    
+    &lt;td>Sami&lt;/td> 
+    
+    &lt;td>15&lt;/td> 
+    
+    &lt;/tr> 
+    
+    &lt;tr> 
+    
+    &lt;td>Amel&lt;/td> 
+    
+    &lt;td>13&lt;/td> 
+    
+    &lt;/tr> 
+    
+    &lt;/tbody> 
+    
+    &lt;/table> 
+
+&lt;style&gt;
+td{
+
+    border:solid 1px black;
+}
+&lt;/style&gt;
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+
+
+</div>
+
+
+<div class="mt-3">
+    <h3 id="videos"> 1.8  Son & Vidéos  </h3>
+    <p>
+      
+       pour intégrer des vidéos et pour la lecture des fichiers audio on en HTML utilise les balises. 
+       &lt;video&gt; respectivement &lt;audio&gt;
+        
+        
+
+    </p>
+   <br>
+   <h4>Example :</h4>
+   <br><br>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('eigtharea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('eigtharea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="eigtharea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+&lt;video width="320" height="240" controls> 
+    &lt;source src="mov_bbb.mp4" type="video/mp4"> 
+  &lt;/video>  
+
+
+
+  &lt;audio  controls> 
+    &lt;source src="audio.mp3" type="audio/mpeg" > 
+  &lt;/audio> 
+
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+
+
+</div>
+
+
+<div class="mt-3">
+    <h3 id="forms"> 1.9  Les formulaires  </h3>
+    <p>
+      
+      
+Le formulaire  est Le seul moyen pour communiquer avec le visiteur de votre site web, Il nous permet de récupérer les données saisies à travers le clavier où bien de connaitre les options sélectionnées parmi une liste de sélection.  
+<br>
+L’élément &lt;label> est une étiquette qui est liée par son attribut for à 
+
+L’identifiant id du champ de formulaire qui lui correspond. 
+
+L'élément input possède plusieurs attributs: 
+<ul>
+    
+<li> ‘name’ pour spécifier le nom de l’input. </li>
+<li> ‘id’ pour spécifier l’identifiant. </li>
+ <li>  type pour spécifier le type ce dernier peut prendre plusieurs valeurs parmi ses valeurs on trouve : </li>
+  
+</ul>
+        
+
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Type </th>
+            <th scope="col">Commande correspondante </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>text </td>
+            <td>Champ de saisie texte (sur une ligne ) </td>
+          </tr>
+          <tr>
+           <td>password</td>
+            <td>Champ de saisie mot de passe (texte caché à la saisie par des points ) </td>
+          </tr>
+          <tr>
+            <td>number </td>
+            <td>Champ numérique </td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td>Champ email ( contient au moins @ ) </td>
+          </tr><tr>
+            <td>url</td>
+            <td>Champ URL </td>
+          </tr>
+          <tr>
+            <td>color  </td>
+            <td>Champ de choix couleur à partir de la palette système (code rgb) </td>
+          </tr>
+
+          <tr>
+            <td>radio  </td>
+            <td>Bouton d’option, un seul peut être sélectionné dans un groupe qui possédé le même attribut ‘name’.    </td>
+          </tr>
+
+          <tr>
+            <td>submit  </td>
+            <td>Envoi des données au serveur     </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    <h4>la balise select </h4>
+      <p>
+        On peut créer un menu à l’aide d’un élément SELECT. Il s'agit d'une 
+
+        liste de propositions ou d'options parmi lesquelles l'utilisateur doit 
+        
+        opérer un choix . <br>
+        
+        • Les options possibles sont décrites dans une balise &lt;option>. <br>
+        
+        • Chaque "option" est une possibilité de choix dans le menu 
+        
+        &lt;select>. <br> 
+        • Le choix en question est mentionné entre 
+        
+        &lt;option>...&lt;/option> 
+    <h4>la balise textarea </h4>
+        
+         <p>
+            L’élément TEXTAREA permet de créer une zone de texte de saisie 
+
+            multi ligne qui permet de saisir plusieurs lignes de texte. 
+            
+             
+         </p>
+      </p>
+   <br>
+   <h4>Example :</h4>
+   <br><br>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row my-2  ">
+        <button class="btn btn-success mx-1 p-2" onclick="copy('ninetharea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('ninetharea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+    </div>
+    
+<div class="d-flex flex-row ">
+<div class="col-lg-12">
+
+    <textarea class="ninetharea" name="" id=""     cols="60" rows="10" readonly>
+&lt;html> 
+
+&lt;head> 
+
+    &lt;meta charset="UTF-8"> 
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+&lt;/head> 
+
+&lt;body> 
+
+&lt;form action="" method="get">
+    &lt;div>&lt;label for="name">Nom :&lt;/label>   &lt;input type="text" name="nom" id="nom">&lt;/div>
+    &lt;div>&lt;label for="password">Password :&lt;/label>  &lt;input type="password" name="password" id="password">&lt;/div>
+    &lt;div>&lt;label for="number">Nombre:  &lt;/label>&lt;input type="number" name="number" id="number">&lt;/div>
+    &lt;div>&lt;label for="email">Email :&lt;/label>&lt;input type="email" name="email" id="email">&lt;/div>
+    &lt;div>&lt;label for="url">Lien:&lt;/label>&lt;input type="url" name="url" id="url">&lt;/div>
+    &lt;div>&lt;label for="color">Votre Couleur préférée : &lt;/label>&lt;input type="color" name="color" id="color">&lt;/div>    
+    &lt;p>Selectionner votre film préféré:&lt;/p>
+    &lt;div&gt;  
+
+    &lt;input type="radio" name="film" id="ratatouille">    
+    &lt;label for="ratatouille"> ratatouille&lt;/label>
+    &lt;/div&gt;  
+
+    &lt;div&gt;  
+
+    &lt;input type="radio" name="film" id="toystory">    
+    &lt;label for="toystory"> toy story&lt;/label>
+    
+    &lt;/div&gt;  
+
+
+    &lt;div&gt;  
+
+    &lt;input type="radio" name="film" id="brotherbear">    
+    &lt;label for="brotherbear">brother bear&lt;/label>
+    
+    &lt;/div&gt;  
+
+    &lt;div&gt;
+
+        &lt;p>Selectionner votre équipe préférée :&lt;/p>
+        &lt;select name="tvshow" id="tvshow">
+            &lt;option value="fc barcelone">fc barcelone&lt;/option>
+            &lt;option value="fc real madrid">fc barcelone&lt;/option>
+            &lt;option value="fc bayern">fc bayern&lt;/option>
+            &lt;option value="manchester united">manchester united&lt;/option>
+
+        &lt;/select>
+
+
+    &lt;/div&gt;  
+    &lt;div&gt;
+
+    &lt;textarea name="tx" id="" cols="30" rows="10">&lt;/textarea>
+
+    &lt;/div&gt;  
+
+
+
+
+    &lt;input type="submit" name="submit" id="submit" value="Valider">&lt;/div>
+        
+&lt;/form>
+
+&lt;style&gt;
+input,div{
+    padding:10px;
+  
+}
+
+&lt;/style&gt;
+
+
+&lt;/body> 
+
+&lt;/html> 
+
+</textarea>
+
+</div>    
+
+</div>     
+
+
+</div>
+
+
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+    <style>
+        *{
+               font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <script>
+       
+        function copy(val){
+            const el = document.getElementsByClassName(val)[0];
+            console.log(el);
+            el.select();
+            document.execCommand('copy');
+
+        }
+        function execute(val){
+            var l=document.getElementsByClassName(val)[0].value;
+          
+            var opened = window.open("Example","Example");
+            opened.document.write(l);
+            opened.document.title="Example";
+        }
+            
+            
+
+       
+    </script>
+</html>
