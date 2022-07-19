@@ -31,7 +31,8 @@
                     <a class="list-group-item list-group-item-action bg-light" href="#operations">3.3 Les opérations de base </a>
                     <a class="list-group-item list-group-item-action bg-light" href="#conditions">3.4 Les conditions </a>
                     <a class="list-group-item list-group-item-action bg-light" href="#boucles">3.5 Les boucles </a>
-                    <a class="list-group-item list-group-item-action bg-light" href="#tableaux">3.5 Les tableaux </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#tableaux">3.6 Les tableaux </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#algorithmiques">3.7 Algorithmique </a>
 
 
                   
@@ -161,7 +162,7 @@
                     <h3 class="my-2" id="hello">3.1 Hello World</h3>
 
                     Hello World , en français Bonjour  le monde l'expression la plus utilisée dans le monde de programmation
-                    paour tester un affichage à l'écran, cette expression peut être utilisé en JavaScript via l'appel de la 
+                    pour tester un affichage à l'écran, cette expression peut être utilisé en JavaScript via l'appel de la 
                     fonction  alert("le message a afficher"); <br> 
                     <h5>vous avez envie de  tester eh bien cliquez ici  !                     <button class="btn btn-primary mx-1 p-2 executer" onclick="alert('hello world !');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
                     </h5> 
@@ -498,12 +499,191 @@
                         </tr>
                         <tr>
                           <td >pop</th>
-                          <td>permet de supprimer un éléments/td>
+                          <td>permet de supprimer un éléments</td>
                         </tr>
                       </tbody>
                     </table> 
 
 
+                    </p>
+                    <h3 class="my-2" id="algorithmiques">3.7 Introduction à l'algorithmique </h3>
+                    <p>
+                      l'algorithmique est tout simplement la science des résolutions des problèmes, quelques soit la nature de problème
+                      (calculable / non calculable). <br>
+                      dont chaque algorithme est composé de deux parties :
+                      <ul>
+                        <li> Partie déclaration des variables</li>
+                        <li>Partie instructions</li>
+                      </ul>
+                      <h4>3.7.1 Détection des nombres pairs</h4>
+
+                      <div class="d-flex flex-column">
+                        <div class="d-flex flex-row my-2  ">
+                            <button class="btn btn-success mx-1 p-2" onclick="copy('eith');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                            <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('eith');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                        </div>
+                        
+                    <div class="d-flex flex-row ">
+                    <div class="col-lg-12">
+                    
+                        <textarea class="eith" name="" id=""     cols="60" rows="10" readonly>
+                        &lt;html> 
+                        
+                        &lt;head> 
+                        
+                            &lt;meta charset="UTF-8"> 
+                        
+                            &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                        
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                        
+                        
+                        
+                        &lt;/head> 
+                        
+                        &lt;body> 
+                        
+                        
+                        
+                        &lt;/body> 
+                        &lt;script>
+                              let a = 10
+                              
+                              if(a % 2  == 0){
+                                alert(a+"  est pair")
+                              }
+                        &lt;/script>
+                        
+                        &lt;/html> 
+                        
+                        </textarea>
+                    
+                    </div>    
+                    
+                    </div>     
+                    
+                    
+                    </div>
+                    <h4>3.7.2 Calcul du min entre trois nombres :</h4>
+
+                    <div class="d-flex flex-column">
+                        <div class="d-flex flex-row my-2  ">
+                            <button class="btn btn-success mx-1 p-2" onclick="copy('sixth');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                            <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('sixth');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                        </div>
+                        
+                    <div class="d-flex flex-row ">
+                    <div class="col-lg-12">
+                    
+                        <textarea class="sixth" name="" id=""     cols="60" rows="10" readonly>
+                    &lt;html> 
+                    
+                    &lt;head> 
+                    
+                        &lt;meta charset="UTF-8"> 
+                    
+                        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                    
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                    
+                    
+                    
+                    &lt;/head> 
+                    
+                    &lt;body> 
+                    
+                    
+                    
+                    &lt;/body> 
+                    &lt;script>
+                          let b = 1
+                          let a = 2 
+                          let c = 3
+                          if(a &lt; b){
+                              if(a &lt; c){
+
+                                alert(a+" est le min")
+                              }else {
+                                alert(c+" est le min")
+
+                              }
+                          }else{
+                            if(b &lt; c){
+
+                              alert(b+" est le min")
+                            }else{
+                              alert(c + "est le min")
+                            }
+                          }
+                    &lt;/script>
+                    
+                    &lt;/html> 
+                    
+                    </textarea>
+                    
+                    </div>    
+                    
+                    </div>     
+                    
+                    
+                    </div>
+
+                    <h4>3.7.3 Détection des palindromes</h4>
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-row my-2  ">
+                          <button class="btn btn-success mx-1 p-2" onclick="copy('seventh');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                          <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('seventh');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                      </div>
+                      
+                  <div class="d-flex flex-row ">
+                  <div class="col-lg-12">
+                  
+                      <textarea class="seventh" name="" id=""     cols="60" rows="10" readonly>
+                      &lt;html> 
+                      
+                      &lt;head> 
+                      
+                          &lt;meta charset="UTF-8"> 
+                      
+                          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                      
+                          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                      
+                      
+                      
+                      &lt;/head> 
+                      
+                      &lt;body> 
+                      
+                      
+                      
+                      &lt;/body> 
+                      &lt;script>
+                            let mot = "radar"
+                            let estPalin = true
+                            let n = mot.length - 1;
+                            for(i=0;i &lt;= mot.length / 2 ; i++){
+                              if(mot[i] != mot[n-i]){
+                                estPalin = false
+                                alert(mot +" n'est pas un palindrome")
+                                break;
+                              }
+                            }
+                            if(estPalin == true){
+                              alert(mot+"  est un palindrome")
+                            }
+                      &lt;/script>
+                      
+                      &lt;/html> 
+                      
+                      </textarea>
+                  
+                  </div>    
+                  
+                  </div>     
+                  
+                  
+                  </div>
                     </p>
                     
 
