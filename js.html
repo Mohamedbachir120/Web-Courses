@@ -685,6 +685,127 @@
                   
                   </div>
                     </p>
+
+                    <h4>3.7.4 Tri d'un tableau</h4>
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-row my-2  ">
+                          <button class="btn btn-success mx-1 p-2" onclick="copy('nineth');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                          <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('nineth');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                      </div>
+                      
+                  <div class="d-flex flex-row ">
+                  <div class="col-lg-12">
+                  
+                      <textarea class="nineth" name="" id=""     cols="60" rows="10" readonly>
+                      &lt;html> 
+                      
+                      &lt;head> 
+                      
+                          &lt;meta charset="UTF-8"> 
+                      
+                          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                      
+                          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                      
+                      
+                      
+                      &lt;/head> 
+                      
+                      &lt;body> 
+                      
+                      
+                      
+                      &lt;/body> 
+                      &lt;script>
+                            let tab = [0,10,2,3,4,5,9,100,1]
+                            let max = true
+                            for(i=0;i &lt;= tab.length-1  ; i++){
+                              let max = tab[i]
+                              for(j=i; j &lt;= tab.length-1  ; j++){
+                                if(max &lt; tab[j]){
+                                  tab[i] = tab[j]
+                                  tab[j] = max 
+                                  max = tab[i]
+                                }
+                              }  
+                            }
+                            console.log(tab)
+                      &lt;/script>
+                      
+                      &lt;/html> 
+                      
+                      </textarea>
+                  
+                  </div>    
+                  
+                  </div>     
+                  
+                  
+                  </div>
+                  <h3>3.8 Programmation orientée objets</h3>
+                  <p>
+                    Nous avons vu jusqu'à présent que des simples variables (entier , Chaine de caractères , boolean , ...)
+                    avez vous pensé comment modéliser un personnage d'un jeu , un employé d'une entreprise , une voiture de course ...  
+                    <br>
+                    Eh oui bien sûr que c'est possible via ce qu'on appelle la programmation orientée objet, ce principe est basé sur la 
+                    création des models (classes) qui possède des caractéristiques (attributs) et des fonctions qui sert à réaliser des opérations précises.
+
+                  </p>
+                  <div class="bg-light p-5 shadow">
+
+                    <span class="text-danger font-weight-bold"> class </span>
+                    <span class="text-dark font-weight-bold">User</span>
+                   <br> {
+                      <p>
+                        
+                       &nbsp; &nbsp; name!: <span class="text-primary"> String</span>;
+                        <br>
+                        &nbsp; &nbsp;  last_name!:<span class="text-primary"> String</span>;
+                        <br>
+                        &nbsp; &nbsp;  age!:<span class="text-primary"> Number</span>;
+                      </p>
+
+                      <span class="text-primary"> constructor</span>
+                     (name:
+                     <span class="text-primary"> String</span>
+                     ,last_name:
+                     <span class="text-primary"> String</span>
+                    ,age:
+                    <span class="text-primary"> Number</span>
+                    ) <br>
+                   &nbsp; { <br>
+                     &nbsp; &nbsp; <span class="text-primary"> this</span>
+                        .name = name; <br>
+                     &nbsp; &nbsp; <span class="text-primary"> this</span>
+                        .last_name = last_name; <br>
+                     &nbsp; &nbsp; <span class="text-primary"> this</span>
+                      .age = age;    <br>
+                     &nbsp; } <br>
+                       
+                    
+                    sePresenter()
+                   <br> &nbsp; {
+                    <br>
+                  &nbsp; &nbsp;    
+                 <span class="text-primary">alert</span> 
+                  ("je m'appelle"+this.name!+" "+this.last_name+ "j'ai"+this.age);
+                       <br>
+                   &nbsp; }  
+                   <br>
+
+                    }
+                    <br>
+
+                 <span class="text-primary">const</span> 
+                    user:
+                 <span class="text-primary">User</span>  
+                    =  
+                    <span class="text-success">new</span>  
+                 <span class="text-primary">User</span>  
+                    ("mohamed","bachir",23);
+                    <br>
+                    user.sePresenter();
+                  </div>
                     
 
                
