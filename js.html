@@ -851,7 +851,208 @@
                        
                        
                       </tbody>
-                    </table>                      
+                    </table>     
+                    <h5>Examples </h5>
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-row my-2  ">
+                          <button class="btn btn-success mx-1 p-2" onclick="copy('selectors10');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                          <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('selectors10');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                      </div>
+                      
+                  <div class="d-flex flex-row ">
+                  <div class="col-lg-12">
+                  
+                      <textarea class="selectors10" name="" id=""     cols="60" rows="10" readonly>
+                      &lt;html> 
+                      
+                      &lt;head> 
+                      
+                          &lt;meta charset="UTF-8"> 
+                      
+                          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                      
+                          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                      
+                      
+                      
+                      &lt;/head> 
+                        
+                      &lt;imadtag> this is a special tag &lt;/ImadTag>
+
+                      &lt;YoucefTag> this is a special tag &lt;/YoucefTag>
+
+                      &lt;div id="monId"> using the id &lt;/div>  
+
+                      &lt;div class="maClass"> using the class &lt;/div>  
+                       
+                      &lt;input type="email" placeholder="with email"> 
+
+                      &lt;body> 
+                      
+                        
+                      
+                      &lt;/body> 
+                      &lt;script>
+                        document.getElementsByTagName("imadtag")[0].innerHTML = "this is imad"
+                        alert("ceci a été récupérer en utilisant id " + document.getElementById("monId").innerHTML)
+                        alert("ceci a été récupérer en utilisant class " + document.getElementsByClassName("maClass")[0].innerHTML) 
+                        alert("ceci a été récupérer en utilisant query selector "+document.querySelector("input[type='email']").getAttribute("type")) 
+                        
+                      
+                      
+                           
+                      &lt;/script>
+                      
+                      &lt;/html> 
+                      
+                      </textarea>
+                  
+                  </div>    
+                  
+                  </div>     
+                  
+                  
+                  </div>
+                    <h4>3.11 Dom Event Listeners</h4>
+                    <table class="table table-striped table-bordered">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">événement</th>
+                          <th scope="col">Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> click     </td>
+                          <td>click de la souris</td>
+                        </tr>
+                        <tr>
+                          <td> mouseover       </td>
+                          <td>Au passage de la souris </td>
+                        </tr>
+                        <tr>
+                          <td> dbclick	</td>
+                          <td> En double click de la souris</td>
+                        </tr>
+                        <tr>
+                          <td> mouseenter </td>
+                          <td> quand la souris entre dans l'espace réservé à un element</td>
+                       </tr>
+                       <tr>
+                        <td>mousemove</td>
+                        <td>quand la souris se déplace dans l'écran</td>
+                       </tr>
+                        <tr>
+                          <td> mouseleave   </td>
+                          <td>quand la souris sort de l'espace réservé à un element</td>
+                        </tr>
+                        <tr>
+                          <td>keydown</td>
+                          <td>à l'appuie sur le clavier </td>
+                        </tr>
+                        <tr>
+                          <td>keyup</td>
+                          <td>à la fin de l'appuie sur le clavier </td>
+                        </tr>
+                        
+
+              
+                       
+                       
+                      </tbody>
+                    </table>  
+
+                    <h5>Examples </h5>
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-row my-2  ">
+                          <button class="btn btn-success mx-1 p-2" onclick="copy('events11');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
+                          <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('events11');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+                      </div>
+                      
+                  <div class="d-flex flex-row ">
+                  <div class="col-lg-12">
+                  
+                      <textarea class="events11" name="" id=""     cols="60" rows="10" readonly>
+                      &lt;html> 
+                      
+                      &lt;head> 
+                      
+                          &lt;meta charset="UTF-8"> 
+                      
+                          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+                      
+                          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                      
+                      
+                      
+                      &lt;/head> 
+                        
+                      
+                      &lt;div id="monId" style="min-height:20vw;min-width:20vw;background:red;">  &lt;/div>  
+
+                      
+                      &lt;body> 
+                      
+                        
+                      
+                      &lt;/body> 
+                      &lt;script>
+                      let element= document.getElementById("monId");
+                      element.addEventListener("click", function() {
+
+                        element.style.backgroundColor = "green";
+
+                      });
+                      element.addEventListener("mouseenter", function() {
+                        
+                        element.style.backgroundColor = "grey";
+                        
+
+                      });
+
+                      window.addEventListener("keydown", function() {
+                        
+                        element.style.backgroundColor = "black";
+                        
+
+                      });
+
+                      element.addEventListener("mouseleave", function() {
+                        
+                        element.style.backgroundColor = "red";
+                        
+                        
+
+                      });
+
+
+                      window.addEventListener("mousemove", function(e) {
+                        var newDiv = document.createElement("div");
+                        newDiv.style.cssText+="min-height:10px;min-width:10px;background:yellow;"
+                        
+                        newDiv.style.cssText+="position:fixed;top:"+e.clientY+";left:e.clientX;"
+
+                        element.appendChild(newDiv);
+                          
+
+
+                      });
+                      
+                      
+                           
+                      &lt;/script>
+                      
+                      &lt;/html> 
+                      
+                      </textarea>
+                  
+                  </div>    
+                  
+                  </div>     
+                  
+                  
+                  </div>
+
 
                
 
@@ -879,7 +1080,7 @@
     </body>
     <style>
         *{
-               /* font-family: 'Poppins', sans-serif; */
+               font-family: 'Poppins', sans-serif;
         }
     </style>
     <script>
