@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painting demo</title>
+    <script src="https://use.fontawesome.com/fdfc9f8e82.js"></script>
+  </head>
+  <body>
+    <div id="tools">
+      <h1>Tools</h1>
+      <ul>
+        <li>
+          <button onclick="set_tool('pencil')">
+            <i class="fa fa-pencil"></i> &nbsp; Pencil
+          </button>
+        </li>
+        <li>
+          <button onclick="set_tool('eraser')">
+            <i class="fa fa-eraser"></i> &nbsp; Eraser
+          </button>
+        </li>
+        <label for="">Pic color</label>
+        <input type="color" onchange="set_color(this.value)" />
+      </ul>
+    </div>
+    <canvas id="screen" width="500" height="500"></canvas>
+  </body>
+  <style>
+    #tools {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    li {
+      list-style: none;
+      margin-top: 5px;
+    }
+    button {
+      background: whitesmoke;
+      border-radius: 15px;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    #screen {
+      margin-left: 15vw;
+      margin-top: 5vw;
+      min-width: 80vw;
+      min-height: 70vh;
+      max-width: 80vw;
+      max-height: 70vh;
+      border: 1px solid black;
+    }
+   
+  </style>
+  <script>
+    var tool = "pencil";
+    var color = "#FF0000";
+    var X =  document.documentElement.clientWidth / 100 ;
+
+    function set_tool(wantedTool) {
+      tool = wantedTool;
+      if(wantedTool == "eraser"){
+        color = "white";
+      }
+    }
+    function set_color(wantedColor) {
+       color = wantedColor;
+    }
+    document
+      .getElementById("screen")
+      .addEventListener("mousemove", function (e) {
+        var ctx = this.getContext("2d");
+        draw(ctx,e.clientX,e.clientY);
+      });
+
+      function draw(ctx,SourisX,SourisY){
+        ctx.fillStyle = color;
+
+        ctx.fillRect(SourisX - (X*15) , SourisY - (X*5), 20, 40);
+      }
+  </script>
+</html>
