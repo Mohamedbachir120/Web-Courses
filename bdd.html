@@ -28,8 +28,8 @@
                     <a class="list-group-item list-group-item-action bg-light" href="#whatisdb">4.1 Qu'est ce qu'une base de données SQL? </a>
                     <a class="list-group-item list-group-item-action bg-light" href="#selecteur">4.2 Langage DDL </a>
                     <a class="list-group-item list-group-item-action bg-light" href="#proprites">4.3 Langage DML</a>
-                    <!-- <a class="list-group-item list-group-item-action bg-light" href="#flexbox">4.4 Les flex Box</a>
-                    <a class="list-group-item list-group-item-action bg-light" href="examples.html">4.5 Exemples</a> -->
+                     <a class="list-group-item list-group-item-action bg-light" href="#flexbox">4.4 Clés primaires et étrangères</a>
+               <!--     <a class="list-group-item list-group-item-action bg-light" href="examples.html">4.5 Exemples</a> -->
                   
 
                 </div>
@@ -155,166 +155,93 @@ Les bases de données sont utilisées pour stocker, maintenir et accéder à tou
 
 </div>
 <div class="mt-3">
-    <h3 id="flexbox"> 2.4 Les flex Box</h3>
+    <h3 id="flexbox"> 4.4 Clés primaires et clés étrangère</h3>
+    <h4>1 -Clé primaire </h4>
     <p>
-
-        Le principe de la mise en page avec Flexbox est simple : vous définissez un conteneur, et à l'intérieur vous placez plusieurs éléments.
-         Imaginez un carton dans lequel vous rangez plusieurs objets : c'est le principe ! 
-
-         Pour utiliser la propriété du flexbox on utilise la règle  : <br>
-
-         display :flex ;  <br>
-         
-         pour spécifier l’ordre (horizontal , vertical ) : <br> 
-         
-         flex-direction : <strong>row</strong>  ou bien <strong>column </strong>  .           <br>
-
-    </p>
-   <br>
-   <h4>Example en utilsant flex-direction : row </h4>
-   <br><br>
-<div class="d-flex flex-column">
-    <div class="d-flex flex-row my-2  ">
-        <button class="btn btn-success mx-1 p-2" onclick="copy('thirdarea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
-        <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('thirdarea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
-    </div>
-    
-<div class="d-flex flex-row ">
-<div class="col-lg-12">
-
-    <textarea class="thirdarea" name="" id=""     cols="60" rows="10" readonly>
-&lt;html> 
-
-&lt;head> 
-
-    &lt;meta charset="UTF-8"> 
-
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-
-
-&lt;/head> 
-
-&lt;body> 
+        Une clé primaire est utilisée pour garantir que les données de la colonne spécifique sont uniques. Une colonne ne peut pas avoir de valeurs NULL. Il s'agit soit d'une colonne de table existante, soit d'une colonne spécifiquement générée par la base de données selon une séquence définie.
+         <br>
 
         
-        &lt;div class="parent-row">
-            &lt;div class="enfant1">Premier élément&lt;/div>
-            &lt;div class="enfant2">deuxième élément&lt;/div>
-            &lt;div class="enfant3">Troisième élement&lt;/div>
-        &lt;/div>
 
-        &lt;style>
-            div{
-                padding: 50px;
-            }
-            .parent-row{
-                display: flex;
-                flex-direction: row;
-                }
-            .enfant1{
-                flex: 1;
-                background-color: red;
-
-            }   
-            .enfant2{
-                flex: 1;
-                background-color: yellow;
-            }
-                .enfant3{
-                    flex: 1;
-                background-color: yellowgreen;
-                }
-             
-        &lt;/style>
-
-&lt;/body> 
-
-&lt;/html> 
-
-</textarea>
-
-</div>    
-
-</div>     
+    </p>
+    <h4>2- Clé étrangère </h4>
+    <p>
+        Une clé étrangère est une colonne ou un groupe de colonnes dans une table de base de données relationnelle qui fournit un lien entre les données de deux tables. C'est une colonne (ou des colonnes) qui référence une colonne (le plus souvent la clé primaire) d'une autre table.
+    </p>
 
 
-</div>
+ <div >
+    <h3>Examples</h3>
+     <p >
+        <h5>Exercice</h5>
+        CREATE TABLE EMPLOYEE (
+        empId INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        dept TEXT NOT NULL
+        );
+<br>
+CREATE TABLE PHONE(
+  num varchar(12) PRIMARY KEY,
+  empId INTEGER NOT NULL,
+  operator TEXT NOT NULL    
+  );
+  <br>
+-- insert
+ALTER TABLE PHONE add foreign KEY  (empId)  references EMPLOYEE(empId); 
 
-<h4>Example en utilsant flex-direction : column </h4>
-<br><br>
-<div class="d-flex flex-column">
- <div class="d-flex flex-row my-2  ">
-     <button class="btn btn-success mx-1 p-2" onclick="copy('fortharea');"   title="copier"> <i class="fa fa-files-o" aria-hidden="true"></i> </button>
-     <button class="btn btn-primary mx-1 p-2 executer" onclick="execute('fortharea');"  title="voir exécution"><i class="fa fa-play" aria-hidden="true"></i>        </button>
+<br>
+INSERT INTO EMPLOYEE VALUES (0001, 'Clark', 'Sales');
+<br>
+INSERT INTO EMPLOYEE VALUES (0002, 'Dave', 'Accounting');
+<br>
+INSERT INTO EMPLOYEE VALUES (0003, 'Ava', 'Sales');
+<br>
+INSERT INTO PHONE VALUES ("0696930704",0001,'mobilis');
+<br>
+
+-- fetch 
+SELECT * FROM EMPLOYEE WHERE dept = 'Sales';
+SELECT * FROM PHONE;
+    </p>
  </div>
- 
-<div class="d-flex flex-row ">
-<div class="col-lg-12">
+<div>
 
- <textarea class="fortharea" name="" id=""     cols="60" rows="10" readonly>
-&lt;html> 
+    <h3>TP Gestion des visites médicaux :</h3>
+    <p>Dans cette exercice on veut automatiser la gestion des cabinets médicaux dans la wilaya d'alger,
+        <br> on veut garder les coordoonées de chaque cabinet (commune,nom,horaire d'ouverture) ainsi que les coordoonées des médecins qui travaillent
+        dans le cabinet (nom, prénom, num tel , diplome, code specialite ), chaque visite concerne un patient donné (nom patient,prénom patient , num tel , adresse),
+        la visite est effectué par un seul médecin , dans un cabinet bien précis .
 
-&lt;head> 
+    </p>
+    <h4>Questions </h4>
+    <ul>
+        <li>Créer la table cabinet </li>
+        <li>Créer la table médecin</li>
+        <li>Créer la table patient</li>
+        <li>Créer la table visite</li>
 
- &lt;meta charset="UTF-8"> 
+        <p>
+             les contraintes des clés primaires et étrangère doivent être respecté
+        </p>
+        <li>
+        insérer 4 lignes dans chaque table 
+         </li> 
 
- &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-
- &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-
-
-&lt;/head> 
-
-&lt;body> 
-
-&lt;div class="parent-col">
-&lt;div class="enfant1">Premier élément&lt;/div>
-&lt;div class="enfant2">deuxième élément&lt;/div>
-&lt;div class="enfant3">Troisième élement&lt;/div>
-&lt;/div>
-
-&lt;style>
-div{
-    padding: 50px;
-}
-.parent-col{
-    display: flex;
-    flex-direction: column;
-    }
-.enfant1{
-    flex: 1;
-    background-color: red;
-
-}   
-.enfant2{
-    flex: 1;
-    background-color: yellow;
-}
-.enfant3{
-    flex: 1;
-background-color: yellowgreen;
-}
-&lt;/style>
+        <li>Récupérer les visites qui se déroule dans la commune de chéraga</li>
+        <li>Récupérer les noms des cabinet qui s'ouvrent à 8h</li> 
+        <li>Récupérer les noms des patient qui contient mohamed</li>
 
 
-&lt;/body> 
-
-&lt;/html> 
-
-</textarea>
-
-</div>    
-
-</div>     
-
+    </ul>
+</div>
 
 </div>
 
+<div>
+    <p>
 
+    </p>
+</div>
 
 </div>
 
