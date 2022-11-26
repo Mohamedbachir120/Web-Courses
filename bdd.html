@@ -29,7 +29,7 @@
                     <a class="list-group-item list-group-item-action bg-light" href="#selecteur">4.2 Langage DDL </a>
                     <a class="list-group-item list-group-item-action bg-light" href="#proprites">4.3 Langage DML</a>
                      <a class="list-group-item list-group-item-action bg-light" href="#flexbox">4.4 Clés primaires et étrangères</a>
-               <!--     <a class="list-group-item list-group-item-action bg-light" href="examples.html">4.5 Exemples</a> -->
+                   <a class="list-group-item list-group-item-action bg-light" href="#agregats">4.5 Les fonctions d'agrégats</a>
                   
 
                 </div>
@@ -233,6 +233,135 @@ SELECT * FROM PHONE;
 
 
     </ul>
+    <h4>Solutions </h4>
+    <p> 
+        <span class="text-success">
+         -------  table Cabinet -----------
+         <br>
+
+        </span>
+        CREATE TABLE Cabinet ( <br>
+            cabinetId INTEGER PRIMARY KEY,<br>
+            name TEXT NOT NULL,<br>
+            commune TEXT NOT NULL,<br>
+            horaire TEXT NOT NULL);
+        <br>
+        <span class="text-success">
+            -------  table médecin -----------
+            <br>
+        </span>
+        CREATE TABLE Medecin ( <br>
+                medecinId INTEGER PRIMARY KEY,<br>
+                name varchar(100) NOT NULL,<br>
+                prenom varchar(100) NOT NULL,<br>
+                numTel TEXT NOT NULL,<br>
+                diplome TEXT NOT NULL,<br>
+                cabinetId INTEGER,<br> 
+                specialite TEXT NOT NULL,<br>
+                FOREIGN KEY (cabinetId) REFERENCES Cabinet(cabinetId));
+
+        <br>
+        <span class="text-success">
+            -------  table patient -----------
+            <br>
+        </span>
+        CREATE TABLE Patient ( <br>
+            patientId INTEGER PRIMARY KEY,<br>
+            name varchar(100) NOT NULL,<br>
+            prenom varchar(100) NOT NULL,<br>
+            numTel TEXT NOT NULL,<br>
+            adresse TEXT NOT NULL);      
+        <br>
+        <span class="text-success">
+            -------  table visite -----------
+            <br>
+        </span>
+        CREATE TABLE Visite ( <br>
+            visiteId INTEGER PRIMARY KEY,<br>
+            heure varchar(100) NOT NULL,<br>
+            patientId INTEGER ,<br>
+            medecinId INTEGER ,<br>
+            cabinetId INTEGER,<br> 
+            FOREIGN KEY (cabinetId) REFERENCES Cabinet(cabinetId),<br>
+            FOREIGN KEY (patientId) REFERENCES Patient(patientId),<br>
+            FOREIGN KEY (medecinId) REFERENCES Medecin(medecinId) );      
+       <br>
+       <span class="text-success">
+        -------  Remplissage des tables -----------
+        <br>
+        ------- cabinet -----------------
+        <br>
+         </span>
+       insert into Cabinet VALUES 
+       (001,"cabinet 1","chéraga","8h"),<br>
+       (002,"cabinet 2","Sidi abdellah","10h"),<br>
+       (003,"cabinet 3","Hydra","8h30"),<br>
+       (004,"cabinet 4","Zéralda","9h");     
+       <br>
+       <span class="text-success">
+        -------  Remplissage des tables -----------
+        <br>
+        ------- Médecin -----------------
+        <br>
+         </span>
+       insert into Medecin VALUES 
+       (001,"mohamed","hadjadji","2136969390704","doctorat",1,"pédiatre"),<br>
+       (002,"youcef","benakki","2136969390704","doctorat",2,"dentiste"),<br>
+       (003,"imad","bouabdellah","2136969390704","doctorat",3,"ophtalmologue"),<br>
+       (004,"taher","belkacem","2136969390704","doctorat",4,"neurologue");
+         <br>
+       <span class="text-success">
+        -------  Remplissage des tables -----------
+        <br>
+        ------- Patient -----------------
+        <br>
+         </span>
+       insert into Patient VALUES 
+       (001,"mohamed","hadjadji","2136969390704","chéraga"),<br>
+       (002,"hamza","Messaoued","2136969390704","Bouinan"),<br>
+       (003,"Ismail","Abdelhafid","2136969390704","Larebaa"),<br>
+       (004,"Zaki","Ouedjhani","2136969390704","chéraga");
+        <br>
+        <span class="text-success">
+            -------  Remplissage des tables -----------
+            <br>
+            ------- Visite -----------------
+            <br>
+             </span>
+        insert into Visite VALUES 
+        (001,"2022-12-07 08:30",1,1,1),<br>
+        (002,"2022-12-07 09:30",2,2,2),<br>
+        (003,"2022-12-07 10:30",3,3,3),<br>
+        (004,"2022-12-07 12:30",4,4,4);
+        <br>
+
+        <span class="text-success">
+            -------  les Requêtes de lecture  -----------
+          
+             </span>
+             <br>
+        SELECT * from Cabinet,Visite where Visite.cabinetId = Cabinet.cabinetId and Cabinet.commune = "chéraga";
+
+        <br>
+        SELECT name FROM `Cabinet` WHERE horaire like '%8%';
+        <br>
+
+        SELECT * FROM Patient WHERE name like '%mohamed%' or prenom like '%mohamed%';
+
+        <br>
+  
+
+    </p>
+    <h3 id="agregats">4.5 Les fonctions d'agrégats </h3>
+    <p>
+        Les fonctions d'agrégats sont utilisé pour effectuer des opérations statistiques , dans un ensemble de données (SUM,AVG,MAX,COUNT ....).
+    </p>
+    <h4>Example :
+    </h4>
+    <p>
+        SELECT count(*) from Visite where heure like '%2022-12-07%'; 
+
+    </p>
 </div>
 
 </div>
