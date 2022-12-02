@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PHP Courses</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Merriweather:ital@0;1&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading">Mohamed Bachir</div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action bg-light" href="#!"><h5>5. PHP</h5></a>
+                    
+                    <a class="list-group-item list-group-item-action bg-light" href="#appliquercss">5.1 Afficher d'un message </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#selecteur">5.2 Les variables en php </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#boucles">5.3 Les condtitions et boucles en php</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#flexbox">2.4 Les flex Box</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="examples.html">2.5 Exemples</a>
+                  
+
+                </div>
+            </div>
+            <!-- Page Content-->
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">
+                                    HTML
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active"><a class="nav-link" href="#!">CSS</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="js.html">JavaScript</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="bdd.html">BDD</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="php.html">PHP</a></li>
+
+                        
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid pb-5">
+                    <h2 class="my-3">PHP</h2>
+                    <div class="d-flex flex-row align-items-center p-4 mx-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"  width="100px" alt="">
+                        <p> Php pour Hypertext Preprocessor est un language de programmation (interpreted language),écrit en c datant des années 1994, utilisé principalement dans la programmation web, dernièrement plusieurs framewrok ont été développé à base de php (Laravel,Cakephp,Symfony,CodeIgniter ...) <br> Php peut communiquer avec plusieurs SGBD (MySQl , oracleDB, SQl Server ...) , plus de  79% des sites web à travers le monde ont été développés en php. </p>
+    
+                    </div>
+                    <h3 class="my-2" id="appliquercss">5.1 Affichage d'un message  </h3>
+
+                    <p>
+
+                        pour afficher un message en php on peut utiliser les fonction et les constructeurs suivants:
+
+                </p>
+
+    <table class="table table-striped table-bordered">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th scope="col">Fonction / Constructeurs </th>
+            <th scope="col">Utilisation</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>print</td>
+                <td>
+                    print est une construction du language , elle prend une expression comme un argument. 
+                </td>
+                
+               
+            </tr>
+            <tr>
+                <td>
+                    echo
+                </td>
+                <td>
+                  echo   est une construction du langage, elle prend une ou plusieurs experessions comme argument. 
+                </td>
+            </tr>
+            <tr>
+                <td> print_r</td>
+                <td>
+                    permet d'afficher des informations lisibles concernant une variable données 
+                </td>
+            </tr>     
+            <tr>
+                <td> var_dump</td>
+                <td>
+                    permet d'afficher des informations concernant une variable données 
+                </td>
+            </tr>        
+        </tbody>
+      </table>
+
+                   <br>
+                  
+                  
+                    <h3 id="selecteur">5.2 Les variables  en php</h3>
+                    <p>
+
+                      toute variable dans le langage php doit commencer par un $ , et elle ne doit pas contenr des caractères spéciaux (le underscore est autorisé _).
+                     <br> il n'est pas nécessaire de spécifier le type de variable à la déclaration , il sera déterminé à partir de la valeur initiale.
+
+
+                    </p>
+
+                    <h5>Exammple: </h5>
+                    <p>
+                        <span class="text-danger">$test = "value"</span> <br>
+                        <span class="text-success">$var2= 10</span>
+                    </p>
+                    <h3 id="boucles">5.3 Les conditions et  boucles en php</h3>
+
+                    <p>
+                        comme tous autres langages les condition en php  à travers les bloc if {}  , else if{} , else {} <br>
+                        , concernant les boucles , nous avons la boucle for (expression){}, while(condition){} , do {} while(condition) , foreach($element in $ collection) {}. 
+                    </p>
+                    <h5>Example :</h5>
+                    <br>
+                    <span class="text-primary"> $age = 50 ;</span> <br>
+                    <span class="text-primary"> if($age &lt; 50) { </span> <br>
+                        &nbsp;   &nbsp;                  <span class="text-primary"> echo "you are old"; </span> <br>
+                    <span class="text-primary"> } </span> <br>
+                        &nbsp;&nbsp;   <span class="text-primary"> echo "ceci est le tableau de multiplication de 5"; </span> <br>
+
+                    <span class="text-primary"> for($i = 0; $i &lt;=  10 ; $i++) { </span> <br>
+                        &nbsp;&nbsp; <span class="text-primary"> echo $i*5; </span> <br>
+
+                        <span class="text-primary"> } </span> <br>
+                    
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+    <style>
+        *{
+               font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <script>
+       
+        function copy(val){
+            const el = document.getElementsByClassName(val)[0];
+            console.log(el);
+            el.select();
+            document.execCommand('copy');
+
+        }
+        function execute(val){
+            var l=document.getElementsByClassName(val)[0].value;
+          
+            var opened = window.open("Example","Example");
+            opened.document.write(l);
+            opened.document.title="Example";
+        }
+            
+            
+
+       
+    </script>
+</html>
