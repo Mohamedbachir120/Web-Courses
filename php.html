@@ -147,8 +147,111 @@
 
                         <span class="text-primary"> } </span> <br>
                     
+                    <h3 id="session&coockies">5.4 Sessions & cookies</h3>
+                       &nbsp; &nbsp; Un cookie est souvent utilisé pour identifier un utilisateur. Un cookie est un petit fichier que le serveur intègre sur l'ordinateur de l'utilisateur. Chaque fois que le même ordinateur demande une page avec un navigateur, il enverra également le cookie.
+                         Avec PHP, vous pouvez à la fois créer et récupérer des valeurs de cookies. <br>
+                         &nbsp; &nbsp; Les sessions permet de stocker des données différentes pour chaque utilisateur en utilisant un identifiant de session unique,
+                        ils sont principalement utilisés dans les systèmes d'authentification, on utilise généralement $_SESSION pour récupérer toutes les 
+                        données d'une session, chaque session en php commence par session_start() et finit par la fermeture du navigateur ou bien en utilisant d'autres méthodes de cookies.
+
+                   <p class="card m-3 p-3">
+                    <span class="text-primary">&lt;?php
+                    </span>
+                    <span class="text-success">
+                        $defaultLng = 'en';
+                        <br>
+                        setcookie("lng", $defaultLng);
+                        <br>
+                        setcookie("lng", $defaultLng, time()+10); 
+                    </span>
+                   <span class="text-secondary">// cookie avec 10 secondes comme durée de vie </span> 
+                   echo $_COOKIE["lng"];  
+
+                     <span>
+                        session_start();
+                        <br>
+                        $_SESSION["email"] = "user@email.com";
+                        <br>
+                        $_SESSION["login_date"] = "2022-12-17";
+                     </span>   
+                     var_dump($_SESSION);
 
 
+                   <span class="text-primary"> ?&gt;                </span>
+                   
+                </p>      
+                <h3 id="session&coockies">5.4 POO</h3>
+                <p>
+                    La notion de la programmation orienté objet a été introduite en php depuis la version 5 (2004),
+                    La programmation orientée objet se base sur un concept fondamental qui est que tout élément dans un script est un objet ou va pouvoir être considéré comme un objet.
+                    chaque objet appartient à une famille d'objets (classe), chaque classe dispose d'attributs et de méthodes qui lui sont spécifiques, qui peuvent être 
+                    partagées par la suite avec d'autres classes via l'héritage.  
+
+                </p>
+                <p class="card">
+                    &lt?php
+                  <span class="text-success">class Car { </span>  
+                    <br>
+                    public $name;  <br>
+                    public $manufacture; <br> 
+                    public $date; <br>
+                    public $serial_number; <br>
+                    public $max_speed; <br>
+                    function __construct($name,$manufacture,$date,$serial_number,$max_speed ){
+                        <br>  $this->name = $name;
+                        <br>$this->manufacture = $manufacture;
+                        <br>$this->date = $date;
+                        <br>$this->serial_number = $serial_number;
+                        <br>$this->max_speed = $max_speed;
+                    }
+                    <br>
+                  } 
+                  <br>
+                  $car =  new Car("clio 4","renault","2022-12-10","0254687-115-06",230);
+                  <br>
+                var_dump($car);
+                  <br>
+                  <span class="text-success">class Car extends Vehicle{</span>
+                    public $type; <br>
+                     }    <br>
+                    ?&gt;
+                </p>
+                <h3 id="session&coockies">5.5 Connexion aux bases de données :</h3>
+                <p>
+                    PHP peut se connecter à plusieurs SGBD , notament MySQL via mysqli object oriented , ou bien mysqli procédurale , ou bien via PDO.
+
+                </p>
+                <p class="card">
+                    &lt;?php <br>
+                    $servername = "localhost"; <br>
+                    $username = "root"; <br>
+                    $password = ""; <br>
+                    $dbname = "test"; <br>
+                    
+                    $conn = new mysqli($servername, $username, $password, $dbname); <br>
+
+                    if ($conn->connect_error) {
+                      die("Connection failed: " . $conn->connect_error); <br>
+                    } <br>
+                    
+                    $sql = "select * from  Patient"; <br>
+                    $result = $conn->query($sql); <br>
+
+                    if ($result->num_rows > 0) <br> { <br>
+                        while($row = $result->fetch_assoc()) {
+                            echo "id: " . $row["patientId"]. " - Name: " . $row["name"]. " " . $row["prenom"]. "<br>";
+                        }
+                    } 
+                    <br>
+                    else <br> {
+                        echo "0 results"; <br>
+                    } <br>
+                    
+                    <br>
+                    
+                    $conn->close(); <br>
+                    ?&gt;
+                </p>
 
                 </div>
             </div>
