@@ -29,7 +29,13 @@
                     <a class="list-group-item list-group-item-action bg-light" href="#selecteur">5.2 Les variables en php </a>
                     <a class="list-group-item list-group-item-action bg-light" href="#boucles">5.3 Les condtitions et boucles en php</a>
                     <a class="list-group-item list-group-item-action bg-light" href="#session&coockies">5.4 Session et Cookies</a>
-                    <a class="list-group-item list-group-item-action bg-light" href="#cnxbdd">5.5 Connexion aux bases des données</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#session&coockies">5.5 POO</a>
+                    
+                    <a class="list-group-item list-group-item-action bg-light" href="#forms">5.6 Formulaire en php (GET / POST)</a>
+
+
+                    <a class="list-group-item list-group-item-action bg-light" href="#cnxbdd">5.7 Connexion aux bases des données</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#files">5.8 Gestion des fichiers</a>
                   
 
                 </div>
@@ -122,11 +128,22 @@
 
 
                     </p>
-
+                    <h4>Les tableaux </h4>
+                    <p>
+                        un tableau en php peut être créer en utilisant la structure array(), il prend un nombre illimité de paramètres 
+                        de type clé valeur. 
+                    </p>
                     <h5>Exammple: </h5>
                     <p>
                         <span class="text-danger">$test = "value"</span> <br>
-                        <span class="text-success">$var2= 10</span>
+                        <span class="text-success">$var2= 10</span> <br>
+                        <span class="text-info">
+                            $array = array(
+                            "ele1" => "val1",
+                            "ele2" => "val2",
+                        );
+
+                        </span>
                     </p>
                     <h3 id="boucles">5.3 Les conditions et  boucles en php</h3>
 
@@ -180,7 +197,7 @@
                    <span class="text-primary"> ?&gt;                </span>
                    
                 </p>      
-                <h3 id="session&coockies">5.4 POO</h3>
+                <h3 id="poo">5.5 POO</h3>
                 <p>
                     La notion de la programmation orienté objet a été introduite en php depuis la version 5 (2004),
                     La programmation orientée objet se base sur un concept fondamental qui est que tout élément dans un script est un objet ou va pouvoir être considéré comme un objet.
@@ -211,16 +228,80 @@
                   <br>
                 var_dump($car);
                   <br>
+                  <span class="text-info">// le mot extends est utilisé pour l'héritage</span> 
                   <span class="text-success">class Car extends Vehicle{</span>
                     public $type; <br>
                      }    <br>
                     ?&gt;
                 </p>
-                <h3 id="cnxbdd">5.5 Connexion aux bases de données :</h3>
+                <h4>5.5.0 Héritage</h4>
+                <p>
+                    L'héritage est l'un des quatre piliers de la programmation orientée objet (POO). L'héritage est le phénomène par lequel une classe enfant peut hériter de toutes les propriétés et caractéristiques de la classe mère.
+
+                    Vous pouvez comprendre cela avec un exemple simple et réel. Prenons l'exemple des êtres humains. Vous héritez des traits caractéristiques de la classe « Humains », tels que marcher, s'asseoir, courir, manger, etc. La classe « Humains » hérite de la classe « Mammifère », ces traits caractéristiques - faisant de la classe « Humain » une classe dérivée de 'Mammifère'. De plus, la classe "Mammifère" tire ses traits caractéristiques d'une autre classe encore - "Animal". Cela fait de la classe « Mammifère » une classe dérivée de la classe « Animal » ; 
+                    faisant également de la classe "Animal" une classe de base.
+                </p>
+
+                <h4>5.5.1 Interface</h4>
+                <p>
+                    Une interface PHP définit un contrat qu'une classe doit remplir. Si une classe PHP est un modèle pour les objets, une interface est un modèle pour les classes. On peut s'attendre à ce que toute classe implémentant une interface donnée ait le même comportement en termes de ce qui peut être appelé, comment elle peut être appelée et ce qui sera retourné.
+                </p>
+                <h4>5.5.2 polymorphisme</h4>
+                <div class="d-flex flex-row">
+
+                    <p>
+                        Le polymorphisme décrit un exemple dans la programmation orientée objet où les méthodes de différentes classes qui font des choses similaires devraient avoir un nom similaire. Le polymorphisme est essentiellement un modèle OOP qui permet à de nombreuses classes avec différentes fonctionnalités d'exécuter ou de partager une interface commune. L'utilité du polymorphisme est que le code écrit dans différentes classes n'a aucun effet sur la classe à laquelle il appartient car ils sont utilisés de la même manière
+                    </p>
+                    <img src="https://www.phptutorial.net/wp-content/uploads/2021/03/PHP-Polymorphism-Interface.svg" alt="" srcset="">
+                </div>
+                <pre class="card">
+                    &lt;?php <br>
+                    interface Greeting {
+                        public function greet();
+                     }
+                     class French implements Greeting {
+                        
+                        public function greet(){
+                           echo "Bonjour";
+                        }
+                     }
+                     class English implements Greeting {
+                        public function greet(){
+                            echo "Hello";
+                         }
+                     }
+                     class German implements Greeting {
+                        public function greet(){
+                            echo "hallo";
+                         }
+                     }
+                     
+                    ?&gt;
+                </pre>
+                <h3 id="forms">5.6 Formulaire en php (GET / POST)</h3>
+                <p>
+                    le requête de type GET est le type  utilisé par défaut, les paramètres envoyés apparaiessent dans l'url donc elle n'est pas sécurisé, 
+                    on l'utilise généralement pour la récupération des données depuis le serveur. <br>
+                    Cepandant les paramètre de la requête  POST n'apparaiessent plus dans l'url, elle est utilisé pour l'ajout et les modifications des données. 
+                    <br> En php le corp des requêtes est accessible depuis les   superglobales $_POST et $_GET. 
+
+                </p>
+                <pre class="card">
+                    &lt;form action="action.php" method="post">
+                        &lt;p>Name : &lt;input type="text" name="nom" />&lt;/p>
+                        &lt;p>Password : &lt;input type="password" name="password" />&lt;/p>
+                        &lt;p>&lt;input type="submit" value="OK">&lt;/p>
+                    &lt;/form>
+                     &lt;?php echo htmlspecialchars($_POST['nom']); 
+                     echo "i know your password but i can't tell you"; ?&gt;
+                </pre>
+                <h3 id="cnxbdd">5.7 Connexion aux bases de données :</h3>
                 <p>
                     PHP peut se connecter à plusieurs SGBD , notament MySQL via mysqli object oriented , ou bien mysqli procédurale , ou bien via PDO.
 
+
                 </p>
+                
                 <p class="card">
                     &lt;?php <br>
                     $servername = "localhost"; <br>
@@ -252,7 +333,63 @@
                     $conn->close(); <br>
                     ?&gt;
                 </p>
+                <h3 id="files">5.8Gestion des fichiers </h3>
+                <p> 
+                    Php offre plusieurs opérations sur les fichiers (lecture,écriture,modification, suppression)
+                </p>
+                <table class="table">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Action</th>
+                            <th>Instruction</th>
+                        </tr>
 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lecture</td>
+                            <td>readfile("nomfichier.txt")</td>
+                        </tr>
+                        <tr>
+                            <td>Ecriture</td>
+                            <td>
+                            <span class="text-info">// ouverture en mode écriture</span>
+                            <br>
+                            $myfile = fopen("nameFile.txt", "w")
+                             <br>
+                            <span class="text-info">// Ecriture en utilisant la fonction fwrite</span>
+                            <br>
+                            fwrite($myfile, "this the file content"); <br>
+                            <span class="text-info">// Fermeture du fichier</span> <br>
+                            fcloe($myfile);
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mise à jour</td>
+                            <td>
+                            <span class="text-info">// ouverture en mode Ajout </span>
+                            <br>
+                            $myfile = fopen("nameFile.txt", "a")
+                             <br>
+                            <span class="text-info">// Ecriture en utilisant la fonction fwrite</span>
+                            <br>
+                            fwrite($myfile, "this the file content"); <br>
+                            <span class="text-info">// Fermeture du fichier</span> <br>
+                            fcloe($myfile);
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Suppression</td>
+                            <td>
+
+                                unlink('nomfichier.txt');    
+
+                            </td>
+                        </tr>   
+                    </tbody>
+                </table>
                 </div>
             </div>
         </div>
