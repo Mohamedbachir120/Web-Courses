@@ -58,7 +58,7 @@
                             <li class="nav-item active"><a class="nav-link" href="js.html">JavaScript</a></li>
                             <li class="nav-item active"><a class="nav-link" href="bdd.html">BDD</a></li>
                             <li class="nav-item active"><a class="nav-link" href="php.html">PHP</a></li>
-
+                            <li class="nav-item active"><a class="nav-link" href="laravel.html">Laravel</a></li>
                         
                         </ul>
                     </div>
@@ -330,6 +330,16 @@
                     } <br>
                     
                     <br>
+
+                        $sql = "INSERT INTO Patient (patientId, name,prenom, numTel,adresse)
+                       <br> VALUES (5, 'Abdou', 'bouguerra','20134558588','said hamdine')";
+                        <br>
+                        <br > if ($conn->query($sql) === TRUE) {
+                       <br>  echo "New record created successfully";
+                        <br> } else {
+                        <br> echo "Error: " . $sql . "&lt;br>" . $conn->error;
+                        <br> }
+
                     
                     $conn->close(); <br>
                     ?&gt;
