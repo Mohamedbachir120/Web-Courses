@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Laravel Courses</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Merriweather:ital@0;1&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading">Mohamed Bachir</div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action bg-light" href="#!"><h5>6. Laravel</h5></a>
+                    
+                    <a class="list-group-item list-group-item-action bg-light" href="#appliquercss">6.1 Routing </a>
+                    <!-- <a class="list-group-item list-group-item-action bg-light" href="#selecteur">6.2 Les sélecteurs CSS </a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#proprites">2.3 Les propriétés CSS</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#flexbox">2.4 Les flex Box</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="examples.html">2.5 Exemples</a>
+                   -->
+
+                </div>
+            </div>
+            <!-- Page Content-->
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">
+                                    HTML
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active"><a class="nav-link" href="#!">CSS</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="js.html">JavaScript</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="bdd.html">BDD</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="php.html">PHP</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="laravel.html">Laravel</a></li>
+
+                        
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid pb-5">
+                    <h2 class="my-3">Laravel</h2>
+                    <div class="d-flex flex-row align-items-end p-4">
+                        <img src="https://static-00.iconduck.com/assets.00/laravel-icon-497x512-uwybstke.png" height="100px" width="100px" alt="">
+                        <p class="m-3">
+                            Laravel est un framework PHP multiplateforme pour la création d'applications Web. Il s'agit d'une plate-forme basée sur un serveur qui gère les données à l'aide du modèle de conception Model-View-Controller (MVC),
+                            <br>
+                            divisant l'architecture backend d'une application en éléments logiques.
+    
+                        </p>
+    
+                    </div>
+                    <h3 class="my-2" id="appliquercss">6.1 Routing </h3>
+
+                    <p>
+                          La gestion des urls en laravel est accessible via le dossier routes   , le dosseir contient 4 fichiers (web.php , api.php , channels.php , console.php )
+                        <ul>
+                            <li> web.php : utilisé pour gérer les urls web </li>
+                            <li> api.php : utilisé pour gérer les api  </li>
+                            <li> channels.php : utilisé pour gérer les événement  de broadcasting </li>
+                            <li> console.php : utilisé pour répertorier les commandes de la console  </li>
+
+
+                        </ul>
+                      Prenons l'example de la création d'une page web page qui affiche bonjour le monde :
+                      <pre>
+                        Route::get('/home',function(){
+                            return "bonjour le monde";
+                        });
+                      </pre>   
+                      <p>
+                        Il existe plusieurs type requêtes http (get , post ... ), pour cela il suffit juste de préciser le type en utilisant la méthode static la plus approprié .
+
+                        <pre>
+                            Route::get('/home',function(){});
+                            Route::post('/home',function(){});
+                            Route::put('/home',function(){});
+                            Route::delete('/home',function(){});
+                            Route::patch('/home',function(){});
+
+                        </pre>
+                      </p>
+                </p>
+                   <br>
+                  
+                  
+                    
+
+
+
+   
+
+
+</div>
+
+
+
+</div>
+
+
+
+                </div>
+         
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+    <style>
+        *{
+               font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <script>
+       
+        function copy(val){
+            const el = document.getElementsByClassName(val)[0];
+            console.log(el);
+            el.select();
+            document.execCommand('copy');
+
+        }
+        function execute(val){
+            var l=document.getElementsByClassName(val)[0].value;
+          
+            var opened = window.open("Example","Example");
+            opened.document.write(l);
+            opened.document.title="Example";
+        }
+            
+            
+
+       
+    </script>
+</html>
