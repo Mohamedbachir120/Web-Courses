@@ -26,9 +26,11 @@
                     <a class="list-group-item list-group-item-action bg-light" href="#!"><h5>6. Laravel</h5></a>
                     
                     <a class="list-group-item list-group-item-action bg-light" href="#appliquercss">6.1 Routing </a>
-                    <!-- <a class="list-group-item list-group-item-action bg-light" href="#selecteur">6.2 Les sélecteurs CSS </a>
-                    <a class="list-group-item list-group-item-action bg-light" href="#proprites">2.3 Les propriétés CSS</a>
-                    <a class="list-group-item list-group-item-action bg-light" href="#flexbox">2.4 Les flex Box</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#migrations">6.2 Les migrations</a>
+
+                    <a class="list-group-item list-group-item-action bg-light" href="#models">6.3 Les Modèles</a>
+                    <a class="list-group-item list-group-item-action bg-light" href="#controllers">6.4 Les contrôleurs </a> 
+                  <!-- <!--  <a class="list-group-item list-group-item-action bg-light" href="#flexbox">2.4 Les flex Box</a>
                     <a class="list-group-item list-group-item-action bg-light" href="examples.html">2.5 Exemples</a>
                    -->
 
@@ -100,6 +102,227 @@
 
                         </pre>
                       </p>
+                      
+                      <h4>Route parameters </h4>
+                      <p>obligatoire :</p>
+                      <pre>
+                        Route::get('/users/{id}',function($id){
+                            return $id;
+                        });
+
+                      </pre>
+                      <p>optionnel : </p>
+                      <pre>
+                        Route::get('/users/{id?}',function($id =null){
+                            return $id;
+                        });
+                      </pre>
+                      <p>
+                        Pour s'assurer qu'il s'agit des bons paramètres on peut rajouter des conditions à vérifier , via Expression régulière ou bien des fonctions intégré :
+                        <pre>
+                            Route::get('/users/{id}',function($id){
+                                return $id;
+                            })->whereNumber('id');
+                        </pre> 
+                      </p>
+                      <p>
+                        Laravel offre la possibilité d'associer un nom à nos routes :
+                        <pre>
+                            Route::get('/users/{id}',function($id){
+                                return $id;
+                            })->name('user');
+                        </pre>
+                      </p>
+                </p>
+                <h3 id="migrations">6.3 Migrations</h3>
+                    <p>La création des migrations en laravel est accessible via la commande artisan make:migrations (le nom de la migration)
+                        <br>Les migrations sert à créer des schémas avec les bases de données (création des tables , suppression des tables , modifications des schémas , etc)
+                        <br>Les migrations se trouvent dans le dossier parent database.
+                      <br>
+                      <h4>Example migration : </h4>
+                      <pre>
+                        /**
+                        * Executer la migration.
+                        */
+                       public function up()
+                       {
+                           Schema::create('populations', function (Blueprint $table) {
+                               $table->id();
+                               $table->string('designation');
+                               $table->timestamps();
+                           });
+                       }
+                   
+                       /**
+                        * Annuler les migrations.
+                        */
+                       public function down()
+                       {
+                           Schema::dropIfExists('populations');
+                       }
+                      </pre>
+                      <h4>La liste des types des Colonnes :</h4>
+                      <table class="table">
+                        <thead class="table-primary">
+                            <tr>
+                                <td>Type</td>
+                                <td>Designation</td>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr><td>bigIncrements</td> <td>Un entier trés grand avec option d'incrémentation automatique</td></tr>
+                            <tr>
+                                <td>boolean</td>
+                                <td>our créer un booléen</td>
+                            </tr>
+                            <tr>
+                                <td>char</td>
+                                <td>chaine de caractères qui prend un paramètre pour délimiter la longueure</td>
+                            </tr>
+                            <tr>
+                                <td>datetime</td>
+                                <td>Un champ qui contient la date et l'heure</td>
+                            </tr>
+                            <tr>
+                                <td>date</td>
+                                <td>Un champ qui contient la date</td>
+                            </tr>
+                            <tr>
+                                <td>float</td>
+                                <td>Pour les nombre réel</td>
+                            </tr>
+                            <tr>
+                                <td>geometry</td>
+                                <td>pour créer un point , polylines  ... </td>
+                            </tr>
+                            <tr>
+                                <td>json</td>
+                                <td>pour stocker des objets en format json</td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>pour les chaines de caractères</td>
+                            </tr>
+                            <tr>
+                                <td>text</td>
+                                <td>pour les texts trop long</td>
+                            </tr>
+                            <tr>
+                                <td>ipAddress</td>
+                                <td>pour stocker les adresse ip</td>
+                            </tr>
+                            <tr>
+                                <td>timestamps</td>
+                                <td>elle crée des champs created_at et updated_at pour la table de type datetime</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                      <p>NB: cette liste n'est pas complète voir documentation officielle </p>
+                      <h4>La liste des commandes des migrations : </h4>
+                      <h4>La liste des types des Colonnes :</h4>
+                      <table class="table">
+                        <thead class="table-primary">
+                            <tr>
+                                <td>Commande</td>
+                                <td>Utilité</td>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>migrate</td>
+                                <td>Pour executer les migrations / NB : cette commande execute toutes les migrations restantes il est possible de spécifier le fichier à executer via le paramètre --path </td>
+                            </tr>
+                            <tr>
+                                <td>migrate:status</td>
+                                <td>Pour récupérer les états des migrations </td>
+                            </tr>
+                            <tr>
+                                <td>migrate --pretend</td>
+                                <td>sert à réaliser des simulations d'execution</td>
+                            </tr>
+                            <tr>
+                                <td>migrate --force</td>
+                                <td>Pour forcer l'execution des migrations (attention certaines migrations sont destructrices)</td>
+                            </tr>
+                            <tr>
+                                <td>migrate:rollback</td>
+                                <td>Pour annuler les dernières migrations exécutés revenir à l'état initiale, avec le paramètre --step on peut spécifier le nombre de pas</td>
+                            </tr>
+                            <tr>
+                                <td>migrate:reset</td>
+                                <td>Pour annuler toutes les migrations</td>
+                            </tr>
+                            <tr>
+                                <td>migrate:refresh</td>
+                                <td>Annuler toutes les migrations , puis les réexcuter </td>
+                            </tr>   
+                            <tr>
+                                <td>migrate:fresh</td>
+                                <td>Supprime toutes les tables de la bases de données , puis éxecute migrate</td>
+                            </tr>
+                        <tbody>
+
+                        </tbody>
+                    
+                      </table>
+                    </p>
+                <h3 id="models">6.3 Modèles</h3>    
+                    <p>Les Modèles représente le premier pilier de l'architecture M.V.C, Les modèles communique essentiellement avec les migrations afin de convertir 
+                        les tables de la base de données en Class , ceci est possible via Eloquent ORM de laravel. 
+                        <br>
+                        La création des modèles via commande  : php artisan make:model (Nom du modèle)
+                        <pre>
+
+
+&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+}
+                        </pre>
+                    </p>
+                <h3 id="controllers">6.4 Contrôleurs</h3>
+                <p>Comme son nom indique M.V.C (Model,View , Controller ) , Les contrôleures représente l'un des piliers du framework . <br>
+                    Les controlleurs s'encharge d'assurer la communication avec 
                 </p>
                    <br>
                   
