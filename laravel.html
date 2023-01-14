@@ -30,8 +30,8 @@
 
                     <a class="list-group-item list-group-item-action bg-light" href="#models">6.3 Les Modèles</a>
                     <a class="list-group-item list-group-item-action bg-light" href="#controllers">6.4 Les contrôleurs </a> 
-                  <!-- <!--  <a class="list-group-item list-group-item-action bg-light" href="#flexbox">2.4 Les flex Box</a>
-                    <a class="list-group-item list-group-item-action bg-light" href="examples.html">2.5 Exemples</a>
+                 <a class="list-group-item list-group-item-action bg-light" href="#views">6.5 Les Vues</a>
+                   <!-- <!--    <a class="list-group-item list-group-item-action bg-light" href="examples.html">2.5 Exemples</a>
                    -->
 
                 </div>
@@ -220,7 +220,7 @@
                       </table>
                       <p>NB: cette liste n'est pas complète voir documentation officielle </p>
                       <h4>La liste des commandes des migrations : </h4>
-                      <h4>La liste des types des Colonnes :</h4>
+                   
                       <table class="table">
                         <thead class="table-primary">
                             <tr>
@@ -319,18 +319,88 @@ class User extends Authenticatable
     ];
 }
                         </pre>
-                    </p>
-                <h3 id="controllers">6.4 Contrôleurs</h3>
-                <p>Comme son nom indique M.V.C (Model,View , Controller ) , Les contrôleures représente l'un des piliers du framework . <br>
-                    Les controlleurs s'encharge d'assurer la communication avec 
-                </p>
-                   <br>
+        </p>
+    <h3 id="controllers">6.4 Contrôleurs</h3>
+    <p>Comme son nom indique M.V.C (Model,View , Controller ) , Les contrôleures représente l'un des piliers du framework . <br>
+        Les controlleurs s'encharge d'assurer la communication avec les modèles et les views, Chaque controleur possèdent des fonctions qui peuvent être associées aux Routes. 
+    </p>
+        <br>
                   
-                  
+    <pre>
+        // web.php file 
+        Route::get('/user',[HomeController::class,'user']);
+        // HomeController file
+        public function user(){
+            return "hello user";
+        }
+    </pre>              
                     
 
+    <h3 id="views">6.5 Les Vues</h3>
+    <p>
+        Dans le cadre MVC, la lettre "V" signifie Vues. Il sépare la logique d'application et la logique de présentation. Les vues sont stockées dans le répertoire resources/views. Généralement, la vue contient le code HTML qui sera servi par l'application.
+        <br> Les vues en laravel se base sur le langage blade , qui fournit certaines fonctionalitées qui permettent de traiter les données envoyées par le serveur. 
+    </p>
+    <h4>Passer les données aux vues :</h4>
+    <pre>
+        //Controller 
+        public function user(){
+            return view('welcome',['name'=>"mohamed"])
+        }
+        //View 
+        Hello , {{ $name }}
+    </pre>
+    <h4>Les directives blades   </h4>
+    <table class="table table-striped">
+        <thead class="table-info">
 
+            <tr>
+                <th>Directive</th>
+                <th>Utilisaion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@isset() & @empty()</td>
+                <td>Sert à vérifier si les variables passé en paramètre contiennent des valuer , pour ne pas lever des exceptions</td>
+            </tr>
+            <tr>
+                <td>@auth // @endauth</td>
+                <td>Pour vérifier si l'utilisateur est authentifié</td>
+            </tr>
+            <tr>
+                <td>@guest // @endguest</td>
+                <td>Pour vérifier si l'utilisateur  n'est pas authentifié</td>
+            </tr>
+            <tr>
+                <td>@production // @endproduction </td>
+                <td>Pour vérifier si l'application est en production</td>
+            </tr>
+            <tr>
+                <td>@switch() // @endswitch  </td>
+                <td>Pour vérifier si une variable est dans un intervalle de données</td>
+            </tr>
+            <tr>
+                <td>Loops : <br>
+                @for() // @endfor <br>
+                @foreach // @endforeach<br>
+                @while  // @endwhile    
+                </td>
+                </td>
+                <td>Pour effectuer des boucles </td>
+            </tr>
+            <tr>
+                <td>@php // @endphp</td>
+                <td>Pour exéctuer un code php</td>
+            </tr>
+            <tr>
+                <td>@if // @endif</td>
+                <td>Pour l'utilisation des conditions</td>
+            </tr>
 
+        </tbody>
+    </table>
+    <p>Il existe bien d'autres directives , pour plus d'informations visiter la documentation officiel</p>
    
 
 
