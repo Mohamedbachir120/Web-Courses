@@ -31,6 +31,9 @@
                     <a class="list-group-item list-group-item-action bg-light" href="#models">6.3 Les Modèles</a>
                     <a class="list-group-item list-group-item-action bg-light" href="#controllers">6.4 Les contrôleurs </a> 
                  <a class="list-group-item list-group-item-action bg-light" href="#views">6.5 Les Vues</a>
+                 <a class="list-group-item list-group-item-action bg-light" href="#relationships">6.6 Les Relations entre les modèles</a>
+                 <a class="list-group-item list-group-item-action bg-light" href="#querying">6.7 Eloquent Querying</a>
+
                    <!-- <!--    <a class="list-group-item list-group-item-action bg-light" href="examples.html">2.5 Exemples</a>
                    -->
 
@@ -54,6 +57,7 @@
                             <li class="nav-item active"><a class="nav-link" href="js.html">JavaScript</a></li>
                             <li class="nav-item active"><a class="nav-link" href="bdd.html">BDD</a></li>
                             <li class="nav-item active"><a class="nav-link" href="php.html">PHP</a></li>
+
                             <li class="nav-item active"><a class="nav-link" href="laravel.html">Laravel</a></li>
 
                         
@@ -402,8 +406,82 @@ class User extends Authenticatable
     </table>
     <p>Il existe bien d'autres directives , pour plus d'informations visiter la documentation officiel</p>
    
+    <h3 id="relationships">6.6 Relations entre les modèles :</h3>
+    <p>
+        Afin d'assurer une cohérence entre les différents modèles, la création des relations entre eux est indispensables
+        (hasMany , hasOne , BelongsTo ...)
+        <h4>One To Many :</h4>
+        Pour définir qu'un modèle donnée possèdent plusieurs objets liés. <br>
+        Example : <br>
+        Un utilisateur possèdent plusieurs notifications. <br>
+        <pre>
+            //  ajouter dans le fichier User
+            public function notifications(){
+
+                return $this->hasMany(Notification::class,'user_id');
+ 
+            } 
+            //  ajouter dans le fichier Notification
+            public function user(){
+
+                return $this->belongsTo(User::class,'user_id');
+ 
+            } 
+        </pre>
+        <p>Note : une clé étrangère doit exister dans le fichier de migration de la table notifications </p>
+        <h4>Many To Many</h4> 
+        Pour définir que plusieurs objets de même modèles  possèdent plusieurs objets liés d'un autre modèles. <br>
+        Example :  <br>
+        plusieurs taches peuvent être réalisées par plusieurs personnes. <br>
+        <pre>
+            //  ajouter dans le fichier User
+            public function tasks(){
+
+                return $this->belongsToMany(Task::class);
+ 
+            } 
+            //  ajouter dans le fichier Task
+            public function users(){
+
+                return $this->belongsToMany(User::class);
+ 
+            } 
+        </pre>
+        <p>
+            NB :  Une table de pivot doit être créée dans le fichier de migration avec le nom task_user. <br>
+            qui possèdent deux clé étrangère task_id , user_id  dans les tables tasks et users respectivement. 
+        </p>
+
+    </p>
+    <h3 id="querying">6.7 Eloquent Querying</h3>
+    <p>
+        toute ma puissance de laravel demeure dans, l'eloquent querying est  un outils qui permet d'envoyer des requêtes aux bases de données d'une manière 
+          simple et facile. <br>
+          Example :  <br>
+          <span class="text-success">// Récupérer la liste de tous les utilisateurs :</span> <br>
+          $users = User::all(); <br>
+
+          <span class="text-success">// Récupérer un utilisateur en utilisant sa clé primaire :</span> <br>
+          $user = User::find($primary_key_value); <br>
 
 
+          <span class="text-success">// Récupérer un utilisateur en appliquant quelques conditions :</span> <br>
+          $user = User::where("nom","value")->
+                        orWhere("DN","like","%2022%")
+                        ->get(); <br>
+          
+        <span class="text-success">// Créer un utilisateur :</span> <br>
+          $user = User::create(["name"=>"youcef","email"=>"email@email.com","password"=>"password"]); <br>
+
+        <span class="text-success">// Mettre à jour un utilisateur :</span> <br>
+          $user = User::where("name","username")
+                    ->update(["password"=>"password"]); <br>
+
+                
+        <span class="text-success">// Supprimer un utilisateur :</span> <br>
+        $user = User::find(1)->delete(); <br>           
+        
+    </p>
 </div>
 
 
